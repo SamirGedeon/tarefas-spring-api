@@ -1,0 +1,37 @@
+### Listar
+GET http://localhost:8080/tarefas
+Accept: application/json
+
+### Cadastrar
+POST http://localhost:8080/tarefas
+Content-Type: application/json
+Accept: application/json
+
+{"titulo": "Estudar Spring", "descricao": "Revisar GET e POST", "concluida": false}
+
+### Buscar por ID
+GET http://localhost:8080/tarefas/1
+
+### Filtrar
+GET http://localhost:8080/tarefas?titulo=spring
+
+### Atualizar (todos os campos)
+PUT http://localhost:8080/tarefas/1
+Content-Type: application/json
+
+{"titulo": "Estudar Spring Atualizado", "descricao": "Revisar GET e POST", "concluida": false}
+
+### Excluir
+DELETE http://localhost:8080/tarefas/1
+
+### Inválido: 400
+POST http://localhost:8080/tarefas
+Content-Type: application/json
+
+{}
+
+### Atualização parcial
+PATCH http://localhost:8080/tarefas/1/concluida
+Content-Type: application/json
+
+{"concluida": true}
